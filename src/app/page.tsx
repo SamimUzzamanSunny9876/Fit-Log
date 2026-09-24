@@ -1,4 +1,5 @@
 import Banner from '@/components/Homepage/Banner';
+import Workout from '@/components/Homepage/Workouts';
 import React from 'react';
 
 const page = () => {
@@ -6,6 +7,7 @@ const page = () => {
     <div className='container mx-auto'>
       
       <Banner/>
+      <Workout/>
 
 
 
