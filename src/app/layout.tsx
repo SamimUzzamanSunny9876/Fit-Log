@@ -3,6 +3,7 @@ import { Geist, Geist_Mono , Oswald} from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Homepage/Navber";
 import Footer from "@/components/Homepage/Footer";
+import WorkoutProvider from "@/Context/WorkoutContext";
 
 
 
@@ -35,10 +36,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
   
     <body className={ `${oswald.className} bg-black text-white min-h-screen` }>
-        
+        <WorkoutProvider>
+
         <Navbar/>
         {children}
         <Footer/>
+        </WorkoutProvider>
         </body>
     </html>
   );

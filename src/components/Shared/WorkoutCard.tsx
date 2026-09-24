@@ -1,9 +1,11 @@
 import { IWorkoutDataType } from "@/types/workout.type";
 import Image from "next/image";
+import Link from "next/link";
 
 
 const WorkoutCard = ({ workout }: { workout: IWorkoutDataType }) => {
   return (
+    <Link href={`/WorkoutDetails/${workout.id}`}> 
     <div className="bg-[#151515] border border-[#262626] rounded-2xl overflow-hidden flex flex-col w-full h-full">
       <div className="relative w-full aspect-[16/10]">
         <Image
@@ -57,6 +59,7 @@ const WorkoutCard = ({ workout }: { workout: IWorkoutDataType }) => {
         </div>
       </div>
     </div>
+    </Link>
   );
 };
 
