@@ -1,11 +1,14 @@
+import Banner from '@/components/Homepage/Banner';
 import React from 'react';
 
 const page = () => {
   return (
-    <div>
-       Home Page
+    <div className='container mx-auto'>
+      
+      <Banner/>
 
-       
+
+
     </div>
   );
 };

@@ -38,7 +38,6 @@ const Navbar = () => {
           </span>
         </button>
 
-       ƒ
         <button className="flex items-center gap-2 group">
           <span className="text-gray-300 text-sm font-medium group-hover:text-white transition-colors">
             Saved

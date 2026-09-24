@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
+import { Geist, Geist_Mono , Oswald} from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar/page";
+import Navbar from "@/components/Homepage/Navber";
+import Footer from "@/components/Homepage/Footer";
+
 
 
 const geistSans = Geist({
@@ -12,6 +14,11 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+const oswald = Oswald({ 
+  subsets: ['latin'],
+  variable: '--font-oswald', 
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -27,10 +34,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
   
-    <body className=" bg-black text-white min-h-screen">
+    <body className={ `${oswald.className} bg-black text-white min-h-screen` }>
         
         <Navbar/>
         {children}
+        <Footer/>
         </body>
     </html>
   );
