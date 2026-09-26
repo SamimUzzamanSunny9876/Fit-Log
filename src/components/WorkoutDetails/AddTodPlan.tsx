@@ -7,7 +7,10 @@ import { toast } from 'react-toastify';
 
 const AddTodPlan = ({workout}:{workout: IWorkoutDataType}) => {
 
-     const { todPlan, setTodPlan} = useContext(WorkoutContext)
+      const { todPlan, setTodPlan} = useContext(WorkoutContext) as {
+        todPlan: IWorkoutDataType[];
+        setTodPlan: React.Dispatch<React.SetStateAction<IWorkoutDataType[]>>;
+      }
       
      const handleAddTodPlan =  ()=>{
       

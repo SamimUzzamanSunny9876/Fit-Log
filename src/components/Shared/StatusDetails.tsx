@@ -8,7 +8,9 @@ import { useContext } from "react";
 
 const StatusDetails = () => {
 
-    const {todPlan} = useContext(WorkoutContext)
+    const { todPlan } = useContext(WorkoutContext) as {
+      todPlan: IWorkoutDataType[];
+    };
     const totalMinutes = todPlan.reduce((sum:number, workout: IWorkoutDataType) => sum + (workout.duration || 0), 0);
 
     const totalCalories = todPlan.reduce((sum : number, workout:IWorkoutDataType) => sum + (workout.caloriesBurned || 0), 0);

@@ -8,7 +8,10 @@ import { useContext } from "react";
 const PlanSaved = () => {
 
    
-  const {todPlan, saved} = useContext(WorkoutContext)
+  const { todPlan, saved } = useContext(WorkoutContext) as {
+    todPlan: { length: number };
+    saved: { length: number };
+  };
 
   return (
     <div className="flex items-center gap-6">
