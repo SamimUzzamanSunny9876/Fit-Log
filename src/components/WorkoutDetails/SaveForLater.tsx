@@ -7,7 +7,10 @@ import { toast } from 'react-toastify';
 
 const SaveForLater = ({workout}:  {workout: IWorkoutDataType }) => {
 
-    const {saved, setSaved} = useContext(WorkoutContext)
+  const {saved, setSaved} = useContext(WorkoutContext) as {
+      saved: IWorkoutDataType[];
+      setSaved: React.Dispatch<React.SetStateAction<IWorkoutDataType[]>>;
+    }
 
     const handleSavedButton=()=>
     {
