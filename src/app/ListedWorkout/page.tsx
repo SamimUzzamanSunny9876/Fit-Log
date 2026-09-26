@@ -1,6 +1,7 @@
 "use client";
 
 import ListedWorkoutDetails from "@/components/Shared/ListedWorkoutDetails";
+import ListedWorkoutSavedDetails from "@/components/Shared/ListedWorkoutSavedDetails";
 import { WorkoutContext } from "@/Context/WorkoutContext";
 import { IWorkoutDataType } from "@/types/workout.type";
 import Link from "next/link";
@@ -26,15 +27,15 @@ const ListedWorkout = () => {
     return copy;
   };
 
-  // Ensure these variables are the ones used in the UI map function below
+ 
   const sortedTodPlan = sortArray(todPlan);
   const sortedSaved = sortArray(saved);
 
   return (
-    // FIX 1: Added 'relative w-full mt-4' to the outer container so the absolute dropdown stays inside it
+    
     <div className="relative w-full mt-4">
         
-      {/* FIX 2: Moved the dropdown OUTSIDE of the tabs-box so DaisyUI doesn't clip or hide it */}
+     
       <div className="absolute top-0 right-0 z-20 flex items-center gap-3">
         <span className="text-[#808080] text-sm font-medium">Sort By</span>
         <select
@@ -50,7 +51,7 @@ const ListedWorkout = () => {
 
       <div className="tabs tabs-box pt-1">
         
-        {/* Today's Plan Tab */}
+       
         <input
           type="radio"
           name="my_tabs_5"
@@ -58,9 +59,9 @@ const ListedWorkout = () => {
           aria-label="Today's Plan"
           defaultChecked
         />
-        {/* Added pt-12 to push content down slightly so the absolute dropdown doesn't overlap the first card */}
+      
         <div className="tab-content bg-base-100 border-base-300 p-6 pt-12">
-          {/* FIX 3: Mapped over sortedTodPlan instead of todPlan */}
+         
           {sortedTodPlan.length > 0 ? sortedTodPlan.map((workout: IWorkoutDataType) => {
             return (
                  <ListedWorkoutDetails key={workout.id} workout={workout}/>
@@ -82,7 +83,7 @@ const ListedWorkout = () => {
           )}
         </div>
 
-        {/* Saved Tab */}
+    
         <input
           type="radio"
           name="my_tabs_5"
@@ -90,10 +91,10 @@ const ListedWorkout = () => {
           aria-label="Saved"
         />
         <div className="tab-content bg-base-100 border-base-300 p-6 pt-12">
-          {/* FIX 3: Mapped over sortedSaved instead of saved */}
+           
           {sortedSaved.length > 0 ? sortedSaved.map((workout: IWorkoutDataType) => {
             return (
-               <ListedWorkoutDetails key={workout.id} workout={workout}/>
+               <ListedWorkoutSavedDetails key={workout.id} workout={workout}/>
             );
           }) : (
             <div className="flex flex-col items-center justify-center w-full py-24 md:py-32 bg-[#111111] border-2 border-dashed border-[#262626] rounded-2xl text-center">
