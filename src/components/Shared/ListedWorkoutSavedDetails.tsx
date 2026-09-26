@@ -5,6 +5,7 @@ import { IWorkoutDataType } from '@/types/workout.type';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useContext } from 'react';
+import { toast } from 'react-toastify';
 
 const ListedWorkoutSavedDetails = ({ workout }: { workout: IWorkoutDataType }) => {
   const { setTodPlan, setSaved } = useContext(WorkoutContext) as {
@@ -19,6 +20,8 @@ const ListedWorkoutSavedDetails = ({ workout }: { workout: IWorkoutDataType }) =
     if (setSaved) {
       setSaved((prev: IWorkoutDataType[]) => prev.filter(item => item.id !== workout.id));
     }
+
+   toast.success("Workout Deleted");
   };
 
   return (

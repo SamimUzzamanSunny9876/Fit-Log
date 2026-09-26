@@ -39,6 +39,8 @@ const ListedWorkoutDetails = ({ workout }: { workout: IWorkoutDataType }) => {
         prev.filter((item) => item.id !== workout.id),
       );
     }
+
+    toast.success("Workout Deleted");
   };
 
   return (

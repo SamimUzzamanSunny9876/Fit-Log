@@ -39,7 +39,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Footer />
         </WorkoutProvider>
 
-        <ToastContainer />
+       <ToastContainer 
+           
+          theme="dark" 
+        />
       </body>
     </html>
   );
