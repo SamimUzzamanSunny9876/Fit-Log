@@ -1,10 +1,9 @@
 import Image from "next/image";
-import React from "react";
+
 import logo from "@/assets/logo.png";
 import WorkoutButton from "../Shared/WorkoutButton";
-import Link from "next/link";
-import PlanSaved from "../Shared/PlanSaved";
 
+import PlanSaved from "../Shared/PlanSaved";
 
 const Navbar = () => {
   return (
@@ -23,17 +22,10 @@ const Navbar = () => {
         </button>
 
         <div className="hidden md:flex items-center gap-1">
-
-          <WorkoutButton/>
-          
-          
+          <WorkoutButton />
         </div>
 
-     
-          
-       <PlanSaved/>
-          
-     
+        <PlanSaved />
       </nav>
     </div>
   );

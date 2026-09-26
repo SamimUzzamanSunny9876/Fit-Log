@@ -1,39 +1,43 @@
 "use client";
 
-import { WorkoutContext } from '@/Context/WorkoutContext';
-import { IWorkoutDataType } from '@/types/workout.type';
-import Image from 'next/image';
-import Link from 'next/link';
-import React, { useContext } from 'react';
-import { toast } from 'react-toastify';
-
+import { WorkoutContext } from "@/Context/WorkoutContext";
+import { IWorkoutDataType } from "@/types/workout.type";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useContext } from "react";
+import { toast } from "react-toastify";
 
 const ListedWorkoutDetails = ({ workout }: { workout: IWorkoutDataType }) => {
-
   const { setTodPlan, setSaved } = useContext(WorkoutContext) as {
     setTodPlan?: React.Dispatch<React.SetStateAction<IWorkoutDataType[]>>;
     setSaved?: React.Dispatch<React.SetStateAction<IWorkoutDataType[]>>;
   };
 
   const handleMarkButton = () => {
- 
     if (setTodPlan) {
-      setTodPlan((prev: IWorkoutDataType[]) => prev.filter(item => item.id !== workout.id));
+      setTodPlan((prev: IWorkoutDataType[]) =>
+        prev.filter((item) => item.id !== workout.id),
+      );
     }
     if (setSaved) {
-      setSaved((prev: IWorkoutDataType[]) => prev.filter(item => item.id !== workout.id));
+      setSaved((prev: IWorkoutDataType[]) =>
+        prev.filter((item) => item.id !== workout.id),
+      );
     }
-    
-    toast.success('Workout finished! Great job.');
+
+    toast.success("Workout finished! Great job.");
   };
 
   const handleCrossButton = () => {
-   
     if (setTodPlan) {
-      setTodPlan((prev: IWorkoutDataType[]) => prev.filter(item => item.id !== workout.id));
+      setTodPlan((prev: IWorkoutDataType[]) =>
+        prev.filter((item) => item.id !== workout.id),
+      );
     }
     if (setSaved) {
-      setSaved((prev: IWorkoutDataType[]) => prev.filter(item => item.id !== workout.id));
+      setSaved((prev: IWorkoutDataType[]) =>
+        prev.filter((item) => item.id !== workout.id),
+      );
     }
   };
 
