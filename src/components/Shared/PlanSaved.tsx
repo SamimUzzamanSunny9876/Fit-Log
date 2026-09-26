@@ -1,7 +1,15 @@
+"use client"
+
+import { WorkoutContext } from "@/Context/WorkoutContext";
 import Link from "next/link";
-import React from "react";
+import { useContext } from "react";
+
 
 const PlanSaved = () => {
+
+   
+  const {todPlan, saved} = useContext(WorkoutContext)
+
   return (
     <div className="flex items-center gap-6">
       <Link href={"/MyPlan"}>
@@ -10,7 +18,7 @@ const PlanSaved = () => {
             Plan
           </span>
           <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[#c6fa00] text-black text-xs font-bold">
-            0
+            {todPlan.length}
           </span>
         </button>
       </Link>
@@ -20,7 +28,7 @@ const PlanSaved = () => {
             Saved
           </span>
           <span className="flex items-center justify-center w-6 h-6 rounded-full border border-gray-600 bg-transparent text-gray-400 text-xs font-bold group-hover:border-gray-400 group-hover:text-gray-300 transition-colors">
-            0
+             {saved.length}
           </span>
         </button>
       </Link>

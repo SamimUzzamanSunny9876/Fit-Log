@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Homepage/Navber";
 import Footer from "@/components/Homepage/Footer";
 import WorkoutProvider from "@/Context/WorkoutContext";
+import { ToastContainer } from "react-toastify";
 
 
 
@@ -42,6 +43,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         {children}
         <Footer/>
         </WorkoutProvider>
+
+          <ToastContainer />
         </body>
     </html>
   );

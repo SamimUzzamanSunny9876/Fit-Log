@@ -1,9 +1,9 @@
 'use client'
 
-import React, { ReactNode, useState } from 'react';
-import { createContext } from 'vm';
+import React, { createContext, ReactNode, useState } from 'react';
 
- const WorkoutContext = createContext({})
+
+ export const WorkoutContext = createContext({})
 
 const WorkoutProvider = ({children} : {children : ReactNode}) => {
 

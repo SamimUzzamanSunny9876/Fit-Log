@@ -1,3 +1,5 @@
+import AddTodPlan from "@/components/WorkoutDetails/AddTodPlan";
+import SaveForLater from "@/components/WorkoutDetails/SaveForLater";
 import { IWorkoutDataType } from "@/types/workout.type";
 import Image from "next/image";
 import React from "react";
@@ -95,38 +97,10 @@ const WorkoutDetails = async ({ params }: { params: Promise<{ id: string }> }) =
 
            
           <div className="flex flex-wrap items-center gap-4 mt-auto">
-            <button className="bg-[#c6fa00] hover:bg-[#b5e500] transition-colors text-black text-sm font-bold px-6 py-3.5 rounded-xl flex items-center gap-2">
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                strokeWidth="2" 
-                stroke="currentColor" 
-                className="w-5 h-5"
-              >
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                <line x1="16" y1="2" x2="16" y2="6" />
-                <line x1="8" y1="2" x2="8" y2="6" />
-                <line x1="3" y1="10" x2="21" y2="10" />
-                <line x1="10" y1="16" x2="14" y2="16" />
-                <line x1="12" y1="14" x2="12" y2="18" />
-              </svg>
-              Add to today&apos;s plan
-            </button>
             
-            <button className="bg-transparent hover:bg-[#151515] transition-colors border border-[#333] text-white text-sm font-medium px-6 py-3.5 rounded-xl flex items-center gap-2">
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                strokeWidth="2" 
-                stroke="currentColor" 
-                className="w-5 h-5"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
-              </svg>
-              Save for later
-            </button>
+            <AddTodPlan workout={workout}/>
+            
+          <SaveForLater workout = {workout}/>
           </div>
 
         </div>
