@@ -2,7 +2,7 @@
 
 import { WorkoutContext } from "@/Context/WorkoutContext";
 import { IWorkoutDataType } from "@/types/workout.type";
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { toast } from "react-toastify";
 
 const AddTodPlan = ({ workout }: { workout: IWorkoutDataType }) => {
@@ -11,24 +11,15 @@ const AddTodPlan = ({ workout }: { workout: IWorkoutDataType }) => {
     setTodPlan: React.Dispatch<React.SetStateAction<IWorkoutDataType[]>>;
   };
 
-  const [isAdded, setIsAdded] = useState(false);
-
   const handleAddTodPlan = () => {
     setTodPlan([...todPlan, workout]);
-    setIsAdded(true);
-    toast.success(`You Have added ${workout.name} in your today's plan`);
+    toast.success(`You Have added  ${workout.name} in your today's plan`);
   };
-
   return (
     <div>
       <button
-        onClick={handleAddTodPlan}
-        disabled={isAdded}
-        className={`transition-colors text-black text-sm font-bold px-6 py-3.5 rounded-xl flex items-center gap-2 ${
-          isAdded
-            ? "bg-gray-400 opacity-70 cursor-not-allowed"
-            : "bg-[#c6fa00] hover:bg-[#b5e500]"
-        }`}
+        onClick={() => handleAddTodPlan()}
+        className="bg-[#c6fa00] hover:bg-[#b5e500] transition-colors text-black text-sm font-bold px-6 py-3.5 rounded-xl flex items-center gap-2"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +36,7 @@ const AddTodPlan = ({ workout }: { workout: IWorkoutDataType }) => {
           <line x1="10" y1="16" x2="14" y2="16" />
           <line x1="12" y1="14" x2="12" y2="18" />
         </svg>
-        {isAdded ? "Added to plan" : "Add to today's plan"}
+        Add to today&apos;s plan
       </button>
     </div>
   );
